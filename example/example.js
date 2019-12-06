@@ -31,7 +31,8 @@ ipc_one.on('close', function (data) {
   L(data.toString());
 });
 
-ipc.connect("testtest")
+ipc.connect("testtest", true)
+
 
 var a = setInterval(myTimer, 1000);
 function myTimer() {
@@ -43,13 +44,13 @@ function myTimer() {
 
   L('Connecton status: ' + ipc.status())
 
-  ipc.write(1, "Hello Server 1")
+  ipc.write(1, "Hello server")
 
 
 }
 
 var b = setInterval(myTimerw, 8000);
 function myTimerw() {
-  // ipc.close()
-  clearInterval(myTimerw)
+ // ipc.close()
+ // clearInterval(myTimerw)
 }
