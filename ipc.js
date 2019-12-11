@@ -321,8 +321,10 @@ function handshake(d) {
                 } else {
                     encryptionActive = true        
                 }
-                events.emit('connect', "connection has been established");
+                
                 status = 2
+                events.emit('connect', "connection has been established");
+                
 
                 return true
             }
