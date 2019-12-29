@@ -205,12 +205,14 @@ function connectionClosed() {
             events.emit('close', "connnection has closed");
         }
 
-        if (os.platform() === 'win32') {
-            namedPipe()
-        } else {
-            unixSocket()
-        }
+        setTimeout(function() {
+            if (os.platform() === 'win32') {
+                namedPipe()
+            } else {
+                unixSocket()
+            }
 
+        }, 2000)
 
     } else {
         events.emit('close', "connection has been closed");
