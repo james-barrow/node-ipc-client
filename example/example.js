@@ -34,7 +34,7 @@ ipc_one.on('close', function (data) {
 ipc.connect("testtest", true)
 
 
-var a = setInterval(myTimer, 1000);
+var a = setInterval(myTimer, 50);
 function myTimer() {
 
   if (ipc.status() == "Closed") {
@@ -44,7 +44,12 @@ function myTimer() {
 
   L('Connecton status: ' + ipc.status())
 
-  ipc.write(1, "Hello server")
+  ipc.write(4, "Hello server")
+
+
+  ipc.write(212, "Hello server")
+
+  ipc.write(663, "Hello server")
 
 
 }

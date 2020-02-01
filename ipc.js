@@ -256,6 +256,11 @@ function readRecieved(connnection) {
         if (mLen != null) {
             processMessage(connection.read(mLen))
         }
+
+        if (connection.readableLength != 0 ){
+            readRecieved(connnection)
+        }
+
     }
 
 }
