@@ -57,8 +57,7 @@ exports.connect = function (ipcName, encryption) {
 
 exports.write = function (msgType, data) {
 
-    if (status == 2) {
-
+    if (status == 2 && handshakeStatus == 5) {
 
         if (typeof (data) == 'string') {
             var message = Buffer.from(data)
@@ -96,7 +95,7 @@ exports.write = function (msgType, data) {
 
 
     } else {
-
+        events.emit('error', "write - not connected to server");
         return false
     }
 
